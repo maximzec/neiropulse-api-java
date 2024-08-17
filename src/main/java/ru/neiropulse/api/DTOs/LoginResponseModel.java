@@ -10,5 +10,4 @@ public class LoginResponseModel {
     public String getToken() {
         return token;
     }
-
 }

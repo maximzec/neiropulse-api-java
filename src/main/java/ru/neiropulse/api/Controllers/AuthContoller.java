@@ -1,19 +1,31 @@
 package ru.neiropulse.api.Controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
 
-import ru.neiropulse.api.Models.LoginRequestModel;
-import ru.neiropulse.api.Models.LoginResponseModel;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import jakarta.validation.Valid;
+import ru.neiropulse.api.DTOs.LoginRequestModel;
+import ru.neiropulse.api.DTOs.LoginResponseModel;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/v1/auth")
 public class AuthContoller {
 
     @PostMapping("/login")
-    public LoginResponseModel login(LoginRequestModel model) {
-        return new LoginResponseModel("ok");
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestModel model) {
+
+        if (model.getLogin().equals("admin") && model.getPassword().equals("123456789")) {
+            return new ResponseEntity<>(new LoginResponseModel("ok"), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+        }
+
     }
 
 }
