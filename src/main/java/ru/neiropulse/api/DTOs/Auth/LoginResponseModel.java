@@ -1,4 +1,4 @@
-package ru.neiropulse.api.Models;
+package ru.neiropulse.api.DTOs;
 
 public class LoginResponseModel {
     private String token;

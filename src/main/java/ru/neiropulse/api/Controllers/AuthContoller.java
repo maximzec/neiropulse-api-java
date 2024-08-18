@@ -1,17 +1,15 @@
 package ru.neiropulse.api.Controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
-import ru.neiropulse.api.DTOs.LoginRequestModel;
-import ru.neiropulse.api.DTOs.LoginResponseModel;
+import ru.neiropulse.api.DTOs.Auth.LoginRequestModel;
+import ru.neiropulse.api.DTOs.Auth.LoginResponseModel;
 
 @RestController
 @RequestMapping("api/v1/auth")

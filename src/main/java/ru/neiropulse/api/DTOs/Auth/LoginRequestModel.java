@@ -1,4 +1,4 @@
-package ru.neiropulse.api.Models;
+package ru.neiropulse.api.DTOs;
 
 import jakarta.validation.constraints.NotBlank;
 
