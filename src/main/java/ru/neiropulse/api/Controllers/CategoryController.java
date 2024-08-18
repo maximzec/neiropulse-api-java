@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
-import ru.neiropulse.api.DTOs.Category.CategoryDto;
+import ru.neiropulse.api.DTOs.CategoryDto;
 import ru.neiropulse.api.Services.CategoryService;
 
 @RestController

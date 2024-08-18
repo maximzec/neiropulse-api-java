@@ -1,5 +1,7 @@
 package ru.neiropulse.api.Services.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +15,7 @@ import ru.neiropulse.api.Services.CategoryService;
 @AllArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
+    @Autowired
     private CategoryRepository repository;
 
     @Override
